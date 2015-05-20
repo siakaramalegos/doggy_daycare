@@ -6,7 +6,7 @@
 
   <% @dogs.each do |dog| %>
     <div class="col-md-3">
-      <div class="panel panel-default">
+      <div class="panel panel-default <%= 'panel-success' if dog.in_daycare %>">
         <div class="panel-heading">
           <h3 class="panel-title"><%= dog.name %> <%= dog.owner.last_name %></h3>
         </div>
