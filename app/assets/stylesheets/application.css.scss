@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  padding-top: 70px;
+}
+
+a {
+  color: #666;
+
+  &:hover {
+    background: none;
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+a.btn {
+  color: #fff;
+}
+
+input[type="checkbox"] {
+  margin-bottom: 5px;
+}
+
+.date-select {
+  display: inline-block;
+  width: auto;
+}
