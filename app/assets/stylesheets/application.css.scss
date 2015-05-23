@@ -40,3 +40,16 @@ input[type="checkbox"] {
   display: inline-block;
   width: auto;
 }
+
+.navbar, .navbar-collapse.collapse {
+  min-height: 55px;
+  height: 55px;
+}
+
+a.navbar-brand {
+  padding: 5px 0 0 15px;
+}
+
+.dog-icon {
+  height: 40px;
+}
