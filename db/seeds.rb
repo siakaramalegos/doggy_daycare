@@ -21,3 +21,8 @@ Breed.create(breed: 'Chihuahua')
 Breed.create(breed: 'Yorkie')
 Breed.create(breed: 'Boxer')
 Breed.create(breed: 'Mutt')
+
+Owner.create(first_name: "Sia", last_name: "Karamalegos", phone: "504-555-1212", emerg_name: "Gail Karamalegos", emerg_phone: "979-555-1212")
+
+Dog.create(name: "Priscilla", owner_id: 1, breed_id: 1, dob: Date.new(2011, 1, 8), vet: "Magazine Street Animal Clinic", in_daycare: true)
+Dog.create(name: "Harry", owner_id: 1, breed_id: 3, dob: Date.new(2013, 2, 14), vet: "Magazine Street Animal Clinic", in_daycare: false)
