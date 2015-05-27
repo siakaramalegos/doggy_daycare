@@ -4,6 +4,9 @@ class DogsController < ApplicationController
   # GET /dogs
   # GET /dogs.json
   def index
+    @owners = Owner.all
+    owner_ids = params[:owner_ids]
+
     # TODO: Make flash notice disappear upon a new search.  Also make sure it clears before next search.
     if params[:search]
       @dogs = Dog.where("name LIKE '%#{params[:search]}%'")
@@ -11,6 +14,8 @@ class DogsController < ApplicationController
         flash[:notice] = 'No result found.'
         @dogs = Dog.all
       end
+    elsif params[:owner_ids]
+      @dogs = Dog.where(owner_id: params[:owner_ids].split(","))
     else
       @dogs = Dog.all
     end
