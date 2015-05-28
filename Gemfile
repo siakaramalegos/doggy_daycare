@@ -39,6 +39,7 @@ gem 'annotate'
 gem 'stamp'
 gem "paperclip", "~> 4.2"
 gem "font-awesome-rails"
+gem 'devise'
 
 group :development do
   gem 'quiet_assets'
