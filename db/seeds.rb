@@ -35,3 +35,6 @@ Dog.create(name: "Nolte", owner_id: 2, breed_id: 5, dob: Date.new(2009, 2, 14),
   vet: "Magazine Street Animal Clinic", in_daycare: false)
 Dog.create(name: "Flambeaux", owner_id: 2, breed_id: 4, dob: Date.new(2014, 2, 14),
   vet: "Magazine Street Animal Clinic", in_daycare: true)
+
+categories = Category.create([{name: 'toys'}, {name: 'treats'},
+  {name: 'food'}, {name: 'accessories'}])
