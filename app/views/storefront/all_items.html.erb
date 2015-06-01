@@ -1,0 +1,53 @@
+<h1>Welcome to Fur-Baby Fun-Time Store!</h1>
+<p>Where you can spend all your money on your fur babies!</p>
+
+<h3>All Items</h3>
+
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-sm-4">
+      <div class="panel panel-default product-height">
+        <div class="panel-body">
+          <%= image_tag product.image.url(:thumb), class: "img-responsive" %>
+          <p><a href="#" data-toggle="modal" data-target="#myModal_<%= product.id %>">
+            <span class="glyphicon glyphicon-plus"></span> quick info
+          </a></p>
+          <h4><%= product.name %></h4>
+          <p><strong><%= number_to_currency product.price %></strong></p>
+          <p>Made by:  <%= product.brand %></p>
+          <!-- TODO:  Add product rating capability
+          <p>
+            <%# product.rating.times do %>
+              <span class="glyphicon glyphicon-star yellow"></span>
+            <%# end %>
+          </p> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal_<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"><%= product.name %></h4>
+          </div>
+          <div class="modal-body">
+            <p><%= number_to_currency product.price %></p>
+            <p><%= product.description %></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <!-- TODO: Remove or change to add to cart
+            <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+
