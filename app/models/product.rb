@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
   belongs_to :category
+  has_many :line_items
+  before_destroy :ensure_not_referenced_by_any_line_item
 
   has_attached_file :image,
     :styles => {
@@ -8,6 +10,17 @@ class Product < ActiveRecord::Base
     :default_url => "missing_product_:style.jpg"
   validates_attachment_content_type :image,
     :content_type => /\Aimage\/.*\Z/
+
+  private
+    # Ensure that there are no line items referencing this product
+    def ensure_not_referenced_by_any_line_item
+      if line_items.empty?
+        return true
+      else
+        errors.add(:base, 'Line items present.')
+        return false
+      end
+    end
 end
 
 # == Schema Information
