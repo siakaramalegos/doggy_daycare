@@ -1,7 +1,11 @@
 <h1>Welcome to Fur-Baby Fun-Time Store!</h1>
 <p>Where you can spend all your money on your fur babies!</p>
 
-<h3>All Items</h3>
+<% if params[:cat_id] %>
+  <h3>All <%= @category.name.capitalize %></h3>
+<% else %>
+  <h3>All Items</h3>
+<% end %>
 
 <div class="row">
   <% @products.each do |product| %>
