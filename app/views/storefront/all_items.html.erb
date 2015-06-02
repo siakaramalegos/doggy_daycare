@@ -34,6 +34,7 @@
             <h4 class="modal-title" id="myModalLabel"><%= product.name %></h4>
           </div>
           <div class="modal-body">
+            <%= image_tag product.image.url(:medium), class: "img-responsive" %>
             <p><%= number_to_currency product.price %></p>
             <p><%= product.description %></p>
           </div>
