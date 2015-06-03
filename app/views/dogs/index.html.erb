@@ -1,5 +1,19 @@
 <h1>Listing Dogs</h1>
 
+<!-- Search box for dogs -->
+<div class="row">
+  <div class="col-sm-12">
+  <%= form_tag("/dogs", method: "get", role: "search", class: "form-inline") do %>
+    <div class="form-group">
+      <%= text_field_tag(:search, nil, placeholder: "Fido", class: "form-control input-sm") %>
+    </div>
+    <%= submit_tag("Search", class: "btn btn-default btn-sm") %>
+  <% end %>
+  </div>
+</div>
+
+<br>
+
 <div class="row">
 
   <% @dogs.each do |dog| %>

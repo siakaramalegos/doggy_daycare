@@ -35,3 +35,13 @@ Dog.create(name: "Nolte", owner_id: 2, breed_id: 5, dob: Date.new(2009, 2, 14),
   vet: "Magazine Street Animal Clinic", in_daycare: false)
 Dog.create(name: "Flambeaux", owner_id: 2, breed_id: 4, dob: Date.new(2014, 2, 14),
   vet: "Magazine Street Animal Clinic", in_daycare: true)
+
+categories = Category.create([{name: 'toys'}, {name: 'treats'},
+  {name: 'food'}, {name: 'accessories'}])
+
+products = Product.create([
+    {name: "ProPlan Select Chicken and Rice", price: 43.99, quantity: 15, description: "Chicken is the number one ingredient in this adult dog food.", brand: "Purina", category_id: 3},
+    {name: "Puppy Kong", price: 8.99, quantity: 10, description: "Softer and smaller Kong treat toy to help keep puppies occupied.", brand: "Kong", category_id: 1},
+    {name: "Large Milk Bones", price: 10.99, quantity: 10, description: "Large dog biscuits that help keep your dog's teeth clean.", brand: "Milk Bone", category_id: 2},
+    {name: "Freedom Harness, Large", price: 27.99, quantity: 5, description: "Tired of your dog taking you for a walk? Try this easy-on, easy-off harness.", brand: "Freedom Harness", category_id: 4}
+  ])
