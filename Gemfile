@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -40,6 +38,8 @@ gem 'stamp'
 gem "paperclip", "~> 4.2"
 gem "font-awesome-rails"
 gem 'devise'
+gem 'aws-sdk'
+gem 'figaro'
 
 group :development do
   gem 'quiet_assets'
@@ -47,7 +47,14 @@ group :development do
   gem 'populator'
 end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 group :development, :test do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
