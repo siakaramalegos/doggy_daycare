@@ -8,7 +8,10 @@ class Dog < ActiveRecord::Base
       :medium => "300x300#",
       :thumb => "100x100#"
     },
-    :default_url => "missing_:style.jpg"
+    :default_url => "missing_:style.jpg",
+    :storage => :dropbox,
+    :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
+    :dropbox_options => {...}
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   validates_attachment_size :avatar, :less_than => 3.megabytes,

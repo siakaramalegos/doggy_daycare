@@ -38,7 +38,8 @@ gem 'stamp'
 gem "paperclip", "~> 4.2"
 gem "font-awesome-rails"
 gem 'devise'
-gem 'aws-sdk'
+# gem 'aws-sdk'
+gem "paperclip-dropbox", ">= 1.1.7"
 gem 'figaro'
 
 group :development do
