@@ -36,13 +36,16 @@ class DogsController < ApplicationController
   # POST /dogs.json
   def create
     @dog = Dog.new(dog_params)
+    @dogs = Dog.all
 
     respond_to do |format|
       if @dog.save
-        format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
+        format.html { redirect_to @dog }
+        format.js {}
         format.json { render :show, status: :created, location: @dog }
       else
         format.html { render :new }
+        format.js { render :action => "new" }
         format.json { render json: @dog.errors, status: :unprocessable_entity }
       end
     end
@@ -51,12 +54,16 @@ class DogsController < ApplicationController
   # PATCH/PUT /dogs/1
   # PATCH/PUT /dogs/1.json
   def update
+    @dogs = Dog.all
+
     respond_to do |format|
       if @dog.update(dog_params)
         format.html { redirect_to dogs_path, notice: 'Dog was successfully updated.' }
+        format.js {}
         format.json { render :show, status: :ok, location: @dog }
       else
         format.html { render :edit }
+        format.js { render :action => "edit" }
         format.json { render json: @dog.errors, status: :unprocessable_entity }
       end
     end
@@ -65,9 +72,11 @@ class DogsController < ApplicationController
   # DELETE /dogs/1
   # DELETE /dogs/1.json
   def destroy
+    @dogs = Dog.all
     @dog.destroy
     respond_to do |format|
       format.html { redirect_to dogs_url, notice: 'Dog was successfully destroyed.' }
+      format.js {}
       format.json { head :no_content }
     end
   end
