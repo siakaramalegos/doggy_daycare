@@ -19,7 +19,7 @@
       <% end %>
 
       <%= link_to content_tag(:i, nil, class: "fa fa-eye"), dog %>
-      <%= link_to content_tag(:i, nil, class: "fa fa-pencil"), edit_dog_path(dog) %>
+      <%= link_to content_tag(:i, nil, class: "fa fa-pencil"), edit_dog_path(dog), remote: true %>
       <%= link_to content_tag(:i, nil, class: "fa fa-trash-o"), dog, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   </div> <!-- panel -->
