@@ -36,13 +36,16 @@ class DogsController < ApplicationController
   # POST /dogs.json
   def create
     @dog = Dog.new(dog_params)
+    @dogs = Dog.all
 
     respond_to do |format|
       if @dog.save
-        format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
+        format.html { redirect_to @dog }
+        format.js {}
         format.json { render :show, status: :created, location: @dog }
       else
         format.html { render :new }
+        format.js { render :action => "new" }
         format.json { render json: @dog.errors, status: :unprocessable_entity }
       end
     end

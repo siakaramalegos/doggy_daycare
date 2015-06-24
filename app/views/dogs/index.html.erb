@@ -9,8 +9,11 @@
     </div>
     <%= submit_tag("Search", class: "btn btn-default btn-sm") %>
   <% end %>
-  </div>
-</div>
+
+  <%= link_to 'New Dog', new_dog_path, remote: true, class: "btn btn-info btn-sm" %>
+  <div id="dog-form"></div>
+  </div> <!-- col -->
+</div> <!-- row -->
 
 <br>
 
@@ -46,6 +49,3 @@
   <% end %>
 
 </div> <!-- row -->
-<br>
-
-<%= link_to 'New Dog', new_dog_path, class: "btn btn-info" %>
