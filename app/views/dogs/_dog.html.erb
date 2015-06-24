@@ -8,7 +8,7 @@
     </div>
     <div class="panel-footer">
       <!-- Check in/out functionality -->
-      <%= form_for(dog, url: dog_path(dog), :html => {class: "form-inline"}) do |f| %>
+      <%= form_for(dog, url: dog_path(dog), remote: true, :html => {class: "form-inline"}) do |f| %>
         <% if dog.in_daycare %>
           <%= f.hidden_field :in_daycare, :value => false %>
           <%= f.submit "Check Out", class: "btn btn-warning btn-xs" %>
@@ -20,7 +20,7 @@
 
       <%= link_to content_tag(:i, nil, class: "fa fa-eye"), dog %>
       <%= link_to content_tag(:i, nil, class: "fa fa-pencil"), edit_dog_path(dog), remote: true %>
-      <%= link_to content_tag(:i, nil, class: "fa fa-trash-o"), dog, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to content_tag(:i, nil, class: "fa fa-trash-o"), dog, remote: true,  method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   </div> <!-- panel -->
 </div> <!-- col-md-3 -->
