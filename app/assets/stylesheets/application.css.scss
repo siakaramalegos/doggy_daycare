@@ -50,6 +50,10 @@ a.navbar-brand {
   padding: 5px 0 0 15px;
 }
 
+.navbar-right {
+  margin-right: 0;
+}
+
 .dog-icon {
   height: 40px;
 }
@@ -70,4 +74,9 @@ form.form-inline {
 
 div#dog-form {
   display: none;
+}
+
+img.img-responsive.dog-show {
+  margin-top: 0;
+  border-radius: 10px;
 }
