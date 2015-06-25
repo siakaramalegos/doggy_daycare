@@ -4,25 +4,24 @@
       <h3 class="panel-title"><%= dog.name %> <%= dog.owner.last_name %></h3>
     </div>
     <div class="panel-body">
-      <%= image_tag dog.avatar.url(:medium), class: "img-responsive" %>
+      <a href="#" data-toggle="modal" data-target="#showDog_<%= dog.id %>">
+        <%= image_tag dog.avatar.url(:medium), class: "img-responsive" %>
+      </a>
     </div>
     <div class="panel-footer">
       <!-- Check in/out functionality -->
       <%= form_for(dog, url: dog_path(dog), remote: true, :html => {class: "form-inline"}) do |f| %>
         <% if dog.in_daycare %>
           <%= f.hidden_field :in_daycare, :value => false %>
-          <%= f.submit "Check Out", class: "btn btn-warning btn-xs" %>
+          <%= f.submit "Check Out", class: "btn btn-default btn-xs" %>
         <% else %>
           <%= f.hidden_field :in_daycare, :value => true %>
-          <%= f.submit "Check In", class: "btn btn-success btn-xs" %>
+          <%= f.submit "Check In", class: "btn btn-default btn-xs" %>
         <% end %>
       <% end %>
 
-      <a href="#" data-toggle="modal" data-target="#showDog_<%= dog.id %>">
-        <%= fa_icon "eye" %>
-      </a>
-      <%= link_to content_tag(:i, nil, class: "fa fa-pencil"), edit_dog_path(dog), remote: true %>
-      <%= link_to content_tag(:i, nil, class: "fa fa-trash-o"), dog, remote: true,  method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to content_tag(:i, " Edit", class: "fa fa-pencil"), edit_dog_path(dog), remote: true, class: "btn btn-warning btn-xs" %>
+      <%= link_to content_tag(:i, " Delete", class: "fa fa-trash-o"), dog, remote: true,  method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
     </div>
   </div> <!-- panel -->
 </div> <!-- col-md-3 -->
