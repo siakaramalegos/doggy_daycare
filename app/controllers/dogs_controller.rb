@@ -45,7 +45,7 @@ class DogsController < ApplicationController
         format.json { render :show, status: :created, location: @dog }
       else
         format.html { render :new }
-        format.js { render :action => "new" }
+        format.js { render :new }
         format.json { render json: @dog.errors, status: :unprocessable_entity }
       end
     end

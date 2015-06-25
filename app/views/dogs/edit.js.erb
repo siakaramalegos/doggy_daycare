@@ -1,2 +1,6 @@
+// Render the form
 $('#dog-form').html("<%= j (render 'form') %>");
-$('#dog-form').slideDown(350);
+$('#dog-form').show();
+
+// Show the modal
+$('#new_dog_modal').modal('show');
