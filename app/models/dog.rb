@@ -2,7 +2,7 @@ class Dog < ActiveRecord::Base
   belongs_to :owner
   belongs_to :breed
 
-  validates :name, :owner_id, :breed_id, presence: true
+  validates :name, :owner_id, :breed_id, :dob, presence: true
 
   has_attached_file :avatar, :styles => {
       :medium => "300x300#",

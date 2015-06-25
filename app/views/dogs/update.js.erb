@@ -1,2 +1,8 @@
+// Re-render the dogs list
 $('#dogs').html("<%= j (render @dogs) %>");
-$('#dog-form').slideUp(350);
+
+// Hide the form
+$('#new_dog_modal').modal('hide')
+
+// Clear form data
+$('#dog_form')[0].reset();

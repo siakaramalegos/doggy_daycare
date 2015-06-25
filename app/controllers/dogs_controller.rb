@@ -2,6 +2,7 @@ class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :authenticate_admin_user!, except: [:index, :show]
+  skip_before_filter :verify_authenticity_token if :json_request?
 
   # GET /dogs
   # GET /dogs.json
@@ -45,7 +46,7 @@ class DogsController < ApplicationController
         format.json { render :show, status: :created, location: @dog }
       else
         format.html { render :new }
-        format.js { render :action => "new" }
+        format.js { render :new }
         format.json { render json: @dog.errors, status: :unprocessable_entity }
       end
     end
