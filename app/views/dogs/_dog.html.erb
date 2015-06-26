@@ -20,8 +20,8 @@
         <% end %>
       <% end %>
 
-      <%= link_to content_tag(:i, " Edit", class: "fa fa-pencil"), edit_dog_path(dog), remote: true, class: "btn btn-warning btn-xs" %>
-      <%= link_to content_tag(:i, " Delete", class: "fa fa-trash-o"), dog, remote: true,  method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
+      <%= link_to content_tag(:i, nil, class: "fa fa-pencil"), edit_dog_path(dog), remote: true, class: "btn btn-warning btn-xs" %>
+      <%= link_to content_tag(:i, nil, class: "fa fa-trash-o"), dog, remote: true,  method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %>
     </div>
   </div> <!-- panel -->
 </div> <!-- col-md-3 -->
